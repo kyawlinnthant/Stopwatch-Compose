@@ -65,7 +65,7 @@ class StopwatchService : Service() {
         createChannel()
         getNotificationManager()
 
-        val action = intent?.getStringExtra(STOPWATCH_ACTION)!!
+        val action = intent?.getStringExtra(STOPWATCH_ACTION)
 
         Log.d("Stopwatch", "onStartCommand Action: $action")
 
@@ -199,9 +199,9 @@ class StopwatchService : Service() {
     @SuppressLint("UnspecifiedImmutableFlag")
     private fun buildNotification(): Notification {
         val title = if (isStopWatchRunning) {
-            "Stopwatch is running!"
+            "Kyaw Kyaw's STOPWATCH is running!"
         } else {
-            "Stopwatch is paused!"
+            "Kyaw Kyaw's STOPWATCH is paused!"
         }
 
         val hours: Int = timeElapsed.div(60).div(60)
